@@ -22,3 +22,26 @@ Stack::Stack() {
 
     top = -1;
 }
+
+bool Stack::push(int value) {
+    /* *************************************************
+    Inserts a value on top of the stack. Succeeds only
+    while the stack is not full; on overflow it leaves
+    the stack unchanged and reports failure.
+
+    @param int value : the value to place on top
+    @return bool : true if pushed, false on overflow
+    @exception : none
+    @note : full means top has reached the last index
+    * ************************************************* */
+
+    bool pushed = false;
+
+    if (top < STACK_SIZE - 1) {
+        top++;
+        items[top] = value;
+        pushed = true;
+    }
+
+    return pushed;
+}
