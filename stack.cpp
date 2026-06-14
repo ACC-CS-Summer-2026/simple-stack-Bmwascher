@@ -83,3 +83,26 @@ int Stack::pop() {
 
     return value;
 }
+
+int Stack::peek() {
+    /* *************************************************
+    Returns the value on top of the stack without
+    removing it. Like pop, underflow cannot be encoded
+    in the int return, so it is signaled by throwing.
+
+    @param : none
+    @return int : the current top value
+    @exception std::underflow_error : thrown when empty
+    @note : top is left unchanged; this is a pure read
+    * ************************************************* */
+
+    int value = 0;
+
+    if (isEmpty()) {
+        throw std::underflow_error("peek called on an empty stack");
+    }
+
+    value = items[top];
+
+    return value;
+}
