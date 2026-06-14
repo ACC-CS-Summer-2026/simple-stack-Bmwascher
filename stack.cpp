@@ -58,3 +58,28 @@ bool Stack::isEmpty() {
 
     return top < 0;
 }
+
+int Stack::pop() {
+    /* *************************************************
+    Removes and returns the value on top of the stack.
+    Because an int cannot encode an error, underflow is
+    signaled by throwing rather than returning a value.
+
+    @param : none
+    @return int : the former top value
+    @exception std::underflow_error : thrown when empty
+    @note : the single return runs only on the non-empty
+            path; the throw is the error exit
+    * ************************************************* */
+
+    int value = 0;
+
+    if (isEmpty()) {
+        throw std::underflow_error("pop called on an empty stack");
+    }
+
+    value = items[top];
+    top--;
+
+    return value;
+}
