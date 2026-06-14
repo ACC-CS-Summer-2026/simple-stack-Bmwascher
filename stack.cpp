@@ -45,3 +45,16 @@ bool Stack::push(int value) {
 
     return pushed;
 }
+
+bool Stack::isEmpty() {
+    /* *************************************************
+    Reports whether the stack holds no values.
+
+    @param : none
+    @return bool : true when the stack is empty
+    @exception : none
+    @note : empty is represented by top < 0
+    * ************************************************* */
+
+    return top < 0;
+}
