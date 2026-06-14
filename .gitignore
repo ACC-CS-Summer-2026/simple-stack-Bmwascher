@@ -1,0 +1,30 @@
+# Baseline .gitignore for C++ assignments that do NOT provide one.
+# (If an assignment provides its own, study it — never replace or edit it.)
+#
+# This file ignores legitimate build/editor/OS artifacts only. ENGINE AND
+# TOOLING (.claude/, .clang-format, the AI log, the PDF) are ignored locally via
+# .git/info/exclude so the committed .gitignore stays a clean project artifact
+# and a provided one is never modified.
+
+# Build artifacts
+*.o
+*.obj
+*.gch
+*.pch
+*.so
+*.a
+a.out
+*.out
+*.exe
+build/
+bin/
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+*~
+
+# OS
+.DS_Store
+Thumbs.db
