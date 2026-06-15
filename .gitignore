@@ -1,30 +1,13 @@
-# Baseline .gitignore for C++ assignments that do NOT provide one.
-# (If an assignment provides its own, study it — never replace or edit it.)
-#
-# This file ignores legitimate build/editor/OS artifacts only. ENGINE AND
-# TOOLING (.claude/, .clang-format, the AI log, the PDF) are ignored locally via
-# .git/info/exclude so the committed .gitignore stays a clean project artifact
-# and a provided one is never modified.
+# This is a simple .gitignore that will ignore everything
+# except this file, README, essay, and cpp and h files
 
-# Build artifacts
-*.o
-*.obj
-*.gch
-*.pch
-*.so
-*.a
-a.out
-*.out
-*.exe
-build/
-bin/
+#ignore everything
+*
+*/
 
-# Editor / IDE
-.vscode/
-.idea/
-*.swp
-*~
-
-# OS
-.DS_Store
-Thumbs.db
+#unignore
+!README.md
+!.gitignore
+!*.cpp
+!*.h
+!essay.md
