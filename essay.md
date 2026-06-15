@@ -29,14 +29,18 @@ simply did not.
 
 ## 3. AI code that was correct but I improved
 
-I did not have a case where I took correct AI code and substantially rewrote it.
-The reason is that I made the important design decisions *before* the code was
-written rather than after. I chose the error-handling strategy, the constant
-style, the structure of the testing (explicit coverage of every state and
-operation, then random testing that scales with the stack size and is validated
-against a model), and the output format up front. Because those judgment calls
-were already made, the first drafts matched what I wanted, so the improvement
-happened in the design stage instead of as edits to finished code.
+The clearest example was the project's `.gitignore`. The AI's first version
+worked correctly — it tracked only my source and documentation and kept build
+artifacts out of the repo — but it was a broad, generic blacklist of about
+twenty-five lines covering toolchains I never use (Windows `*.obj`/`*.exe`, macOS
+`.DS_Store`, VS Code, static and shared libraries). I noticed it was ignoring
+file types that could never appear in a Linux/g++ project and asked whether it
+was actually professional. I improved it in two steps: first trimming it to only
+the patterns my real toolchain produces, then switching it to the
+ignore-everything-then-unignore "whitelist" style so it matches my other
+assignment and is safe by default — any unexpected file type is ignored unless I
+explicitly allow it. The AI's version was functional; mine is leaner, consistent
+across the course, and something I can explain line by line.
 
 ## 4. Something I learned by using AI
 
